@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingLeft="16dp"
+android:paddingRight="16dp" >
+
+
+<EditText
+    android:id="@+id/et_key"
+    android:layout_width="373dp"
+    android:layout_height="114dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="223dp"
+    android:hint="Mnemonic Seed "
+    android:inputType="text" />
+
+<EditText
+    android:id="@+id/et_key"
+    android:layout_width="373dp"
+    android:layout_height="114dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="82dp"
+    android:hint="Spend Key "
+    android:inputType="text" />
+
+<EditText
+    android:id="@+id/et_key"
+    android:layout_width="373dp"
+    android:layout_height="114dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="496dp"
+    android:hint="Public Addres"
+    android:inputType="text" />
+
+<EditText
+    android:id="@+id/et_key"
+    android:layout_width="373dp"
+    android:layout_height="114dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="354dp"
+    android:hint="View Key"
+    android:inputType="text" />
+
+<Button
+    android:id="@+id/buttonkey"
+    android:layout_width="228dp"
+    android:layout_height="76dp"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginStart="93dp"
+    android:layout_marginLeft="93dp"
+    android:layout_marginTop="93dp"
+    android:layout_marginEnd="93dp"
+    android:layout_marginRight="100dp"
+    android:layout_marginBottom="24dp"
+    android:text="Send" />
+
+</RelativeLayout>
