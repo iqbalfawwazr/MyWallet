@@ -96,7 +96,7 @@ public class Key extends Activity {
                 public void onRead(int size) {
                     byte[] buf = new byte[size];
                     mnPhysicaloid.read(buf, size);
-                    tvAppend(TVRead, Html.fromHtml("<font color=blue>" + new String(buf) + "</font>"));
+                    tvAppend(TVRead, Html.fromHtml( new String(buf)));
                 }
             });
         } else {

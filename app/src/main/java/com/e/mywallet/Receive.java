@@ -96,7 +96,7 @@ public class Receive extends Activity {
                 public void onRead(int size) {
                     byte[] buf = new byte[size];
                     mPhysicaloid.read(buf, size);
-                    tvAppend(tvRead, Html.fromHtml("<font color=blue>" + new String(buf) + "</font>"));
+                    tvAppend(tvRead, Html.fromHtml( new String(buf) ));
                 }
             });
         } else {
