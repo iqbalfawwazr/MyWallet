@@ -14,9 +14,9 @@ public class Splash extends Activity {
 
         int secondsDelayed = 1;
         new Handler().postDelayed(new Runnable() {
-            public void run() {
-                startActivity(new Intent(Splash.this, Menu.class));
-                finish();
+                    public void run() {
+                        startActivity(new Intent(Splash.this, Menu.class));
+                        finish();
             }
         }, secondsDelayed * 5000);
     }
