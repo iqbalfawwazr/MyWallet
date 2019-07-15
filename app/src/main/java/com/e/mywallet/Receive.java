@@ -2,7 +2,7 @@ package com.e.mywallet;
 
 import com.physicaloid.lib.Physicaloid;
 import com.physicaloid.lib.usb.driver.uart.ReadLisener;
-
+import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,7 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Receive extends Activity {
+public class Receive extends AppCompatActivity{
     Button btOpen,  btWrite;
     EditText etWrite;
     TextView tvRead;
@@ -112,12 +112,14 @@ public class Receive extends Activity {
         }
     }
     public void onClickWrite(View v) {
+
         tvRead.setText(null);
         String str = getText(R.string.generate).toString()+"\r\n";
         if(str.length()>0) {
             byte[] buf = str.getBytes();
             mPhysicaloid.write(buf, buf.length);
         }
+        openDialog();
     }
 
     private void setEnabledUi(boolean on) {
@@ -132,6 +134,11 @@ public class Receive extends Activity {
             cbAutoscroll.setEnabled(true);
             btWrite.setEnabled(false);
         }
+    }
+
+    public void openDialog() {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
     Handler mHandler = new Handler();

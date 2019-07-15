@@ -1,5 +1,8 @@
 package com.e.mywallet;
 
+
+import com.physicaloid.lib.Physicaloid;
+import com.physicaloid.lib.usb.driver.uart.ReadLisener;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,10 +14,14 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class Dialog extends AppCompatDialogFragment {
+public class ExampleDialog extends AppCompatDialogFragment {
     private EditText editTextUsername;
     private EditText editTextPassword;
     private ExampleDialogListener listener;
+    Physicaloid mPhysicaloid; // initialising library
+    //mPhysicaloid = new Physicaloid(this);
+
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -22,6 +29,7 @@ public class Dialog extends AppCompatDialogFragment {
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog, null);
+
 
         builder.setView(view)
                 .setTitle("Login")
@@ -34,13 +42,15 @@ public class Dialog extends AppCompatDialogFragment {
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String username = editTextUsername.getText().toString();
                         String password = editTextPassword.getText().toString();
-                        listener.applyTexts(username, password);
+                        if(password.length()>0) {
+                            byte[] buf = password.getBytes();
+                            mPhysicaloid.write(buf, buf.length);
+                        }
                     }
                 });
 
-        editTextUsername = view.findViewById(R.id.edit_username);
+       // editTextUsername = view.findViewById(R.id.edit_username);
         editTextPassword = view.findViewById(R.id.edit_password);
 
         return builder.create();
