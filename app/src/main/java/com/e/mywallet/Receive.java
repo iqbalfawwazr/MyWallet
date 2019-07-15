@@ -119,7 +119,7 @@ public class Receive extends AppCompatActivity{
             byte[] buf = str.getBytes();
             mPhysicaloid.write(buf, buf.length);
         }
-        openDialog();
+        //openDialog();
     }
 
     private void setEnabledUi(boolean on) {
