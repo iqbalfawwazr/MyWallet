@@ -26,7 +26,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation files('libs/FNM9MXQIJUCPKBD.jar')
-    implementation files('libs/jsonrpc2-client-1.16.4.jar')
-    implementation files('libs/json-smart-2.0-RC3.jar')
-    implementation files('libs/android-json-rpc-0.3.4.jar')
 }
