@@ -18,4 +18,5 @@
         <item>230400 baud</item>
         <item>250000 baud</item>
     </string-array>
+    <string name="title_activity_get_times">GetTimes</string>
 </resources>
