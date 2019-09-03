@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class Menu extends AppCompatActivity {
 
-    Button btnCek,btnSend, btnReceive, btnCheck,btnKey;
+    Button btnCek,btnSend, btnReceive, btnCheck,btnKey, btnInsertKey,btnInsertPin;
     TextView tampil;
 
 
@@ -24,6 +24,8 @@ public class Menu extends AppCompatActivity {
         btnCheck = (Button)findViewById(R.id.buttoncheck);
         btnKey = (Button) findViewById(R.id.buttonkey);
         tampil = (TextView) findViewById(R.id.text_view_id);
+        btnInsertKey = (Button) findViewById(R.id.buttonInsertKey);
+        btnInsertPin = (Button) findViewById(R.id.buttonInsertPin);
 
         btnSend.setOnClickListener(new View.OnClickListener()
         {
@@ -58,6 +60,24 @@ public class Menu extends AppCompatActivity {
             public void onClick(View v)
             {
                 startActivity(new Intent(Menu.this, Key.class));;
+            }
+        });
+
+        btnInsertKey.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(Menu.this, InsertKey.class));
+            }
+        });
+
+        btnInsertPin.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(Menu.this, InsertPIN.class));
             }
         });
 
